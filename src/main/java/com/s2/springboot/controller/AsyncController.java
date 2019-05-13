@@ -28,7 +28,7 @@ public class AsyncController {
 
     @GetMapping("/webasynctask")
     WebAsyncTask<String> webAsyncTask() {
-        return new WebAsyncTask<>(5000L, "myAsyncExecutor",
+        return new WebAsyncTask<>(5000L, "myExecutor",
                 () -> {
                     return "hello web async task.";
                 });
