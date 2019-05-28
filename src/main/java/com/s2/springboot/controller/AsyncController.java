@@ -19,6 +19,11 @@ public class AsyncController {
     @Autowired
     AsyncService asyncService;
 
+    @GetMapping("sync")
+    String sync() {
+        return "sync";
+    }
+
     @GetMapping("/callable")
     Callable<String> callable() {
         return () -> {
@@ -35,7 +40,7 @@ public class AsyncController {
     }
 
     @GetMapping("/deferred")
-    public DeferredResult<String> defferred() {
+    public DeferredResult<String> deferred() {
         DeferredResult dr = new DeferredResult();
 
         ListenableFuture<String> lf = asyncService.simpleLFAsync();
