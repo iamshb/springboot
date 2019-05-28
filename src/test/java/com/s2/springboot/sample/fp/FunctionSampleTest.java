@@ -1,16 +1,16 @@
 package com.s2.springboot.sample.fp;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-class FunctionSampleTest {
+public class FunctionSampleTest {
 
     @Test
-    void map() {
+    public void map() {
         FunctionSample fs = new FunctionSample();
         List<Integer> list =  fs.map(Arrays.asList("lamda", "in", "action"),
                 (String s) -> s.length()
